@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Cow : MonoBehaviour
+public class Cow : Agent
 {
 	#region Inspector Fields
-	[SerializeField] private float _speed = 1;
 
 	public UnityEvent Tipped = new UnityEvent();
 	public UnityEvent Alerted = new UnityEvent();
@@ -55,6 +54,7 @@ public class Cow : MonoBehaviour
 	private void Tip()
 	{
 		Tipped?.Invoke();
+		State = new TippedCowState(this);
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}
@@ -62,14 +62,9 @@ public class Cow : MonoBehaviour
 	private void Alert()
 	{
 		Alerted?.Invoke();
+		State = new WanderingCowState(this);
 
 		Debug.Log($"{gameObject.name} has been alerted.");
-	}
-
-	public void MoveTo(Vector3 position)
-	{
-		transform.LookAt(position);
-		transform.Translate(_speed * Time.deltaTime * Vector3.forward);
 	}
 	#endregion
 }

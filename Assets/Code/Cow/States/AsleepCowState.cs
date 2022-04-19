@@ -12,7 +12,7 @@ public class AsleepCowState : CowState
 	#region Constructors
 	public AsleepCowState(Cow cow) : base(cow)
 	{
-		Debug.Log($"{cow.name} is asleep.");
+		Debug.Log($"{_cow.name} is asleep.");
 	}
 	#endregion
 

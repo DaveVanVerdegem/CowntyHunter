@@ -18,7 +18,7 @@ public class WanderingCowState : CowState
 	#region Constructors
 	public WanderingCowState(Cow cow) : base(cow)
 	{
-		Debug.Log($"{cow.name} is wandering.");
+		Debug.Log($"{_cow.name} is wandering.");
 
 		GenerateNewTargetPosition();
 	}
@@ -30,7 +30,7 @@ public class WanderingCowState : CowState
 		if (TargetReached())
 			GenerateNewTargetPosition();
 
-		_cow.MoveTo(_targetPosition);
+		_cow.Move((_targetPosition - _cow.transform.position));
 	}
 	#endregion
 

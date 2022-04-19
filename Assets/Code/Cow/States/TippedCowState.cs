@@ -12,7 +12,8 @@ public class TippedCowState : CowState
 	#region Constructors
 	public TippedCowState(Cow cow) : base(cow)
 	{
-		Debug.Log($"{cow.name} is tipped.");
+		Debug.Log($"{_cow.name} is tipped.");
+		_cow.transform.Rotate(Vector3.right, -90);
 	}
 	#endregion
 
