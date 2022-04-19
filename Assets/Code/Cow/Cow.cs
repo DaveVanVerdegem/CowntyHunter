@@ -24,7 +24,7 @@ public class Cow : Agent
 
 	private void Initialize()
 	{
-		State = new AsleepCowState(this);
+		SetState(new AsleepCowState(this));
 	}
 
 	private void Update()
@@ -43,6 +43,15 @@ public class Cow : Agent
 	#endregion
 
 	#region Methods
+	public void SetState(CowState cowState)
+	{
+		if(State != null)
+			State.Exit();
+
+		State = cowState;
+		State.Enter();
+	}
+
 	public bool TryToTip()
 	{
 		bool tipped = State.CanBeTipped;
@@ -58,7 +67,7 @@ public class Cow : Agent
 	private void Tip()
 	{
 		Tipped?.Invoke();
-		State = new TippedCowState(this);
+		SetState(new TippedCowState(this));
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}
@@ -66,7 +75,7 @@ public class Cow : Agent
 	private void Alert()
 	{
 		Alerted?.Invoke();
-		State = new WanderingCowState(this);
+		SetState(new WanderingCowState(this));
 
 		Debug.Log($"{gameObject.name} has been alerted.");
 	}
