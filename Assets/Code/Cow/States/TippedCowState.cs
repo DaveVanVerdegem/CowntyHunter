@@ -13,7 +13,7 @@ public class TippedCowState : CowState
 	public TippedCowState(Cow cow) : base(cow)
 	{
 		Debug.Log($"{_cow.name} is tipped.");
-		_cow.transform.Rotate(Vector3.right, -90);
+		_cow.transform.Rotate(Vector3.right, 180);
 	}
 	#endregion
 
