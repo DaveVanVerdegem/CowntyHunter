@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Cow : Agent
 {
 	#region Inspector Fields
+	public Vector2 PastureSize = Vector2.one;
 
 	public UnityEvent Tipped = new UnityEvent();
 	public UnityEvent Alerted = new UnityEvent();
@@ -23,7 +24,7 @@ public class Cow : Agent
 
 	private void Initialize()
 	{
-		State = new AsleepCowState(this);
+		SetState(new AsleepCowState(this));
 	}
 
 	private void Update()
@@ -33,12 +34,24 @@ public class Cow : Agent
 
 	private void OnDrawGizmosSelected()
 	{
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawWireCube(Vector3.zero, new Vector3(PastureSize.x * 2, 2f, PastureSize.y * 2));
+
 		if(State != null)
 			State.ShowDebugInfo();
 	}
 	#endregion
 
 	#region Methods
+	public void SetState(CowState cowState)
+	{
+		if(State != null)
+			State.Exit();
+
+		State = cowState;
+		State.Enter();
+	}
+
 	public bool TryToTip()
 	{
 		bool tipped = State.CanBeTipped;
@@ -54,7 +67,7 @@ public class Cow : Agent
 	private void Tip()
 	{
 		Tipped?.Invoke();
-		State = new TippedCowState(this);
+		SetState(new TippedCowState(this));
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}
@@ -62,7 +75,7 @@ public class Cow : Agent
 	private void Alert()
 	{
 		Alerted?.Invoke();
-		State = new WanderingCowState(this);
+		SetState(new WanderingCowState(this));
 
 		Debug.Log($"{gameObject.name} has been alerted.");
 	}

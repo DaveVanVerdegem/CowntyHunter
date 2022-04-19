@@ -30,7 +30,9 @@ public abstract class CowState
 	#endregion
 
 	#region Life Cycle
+	public abstract void Enter();
 	public abstract void Run();
+	public abstract void Exit();
 	#endregion
 
 	#region Methods

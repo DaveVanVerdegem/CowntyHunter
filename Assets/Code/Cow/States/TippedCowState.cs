@@ -18,7 +18,15 @@ public class TippedCowState : CowState
 	#endregion
 
 	#region Life Cycle
+	public override void Enter()
+	{
+	}
+
 	public override void Run()
+	{
+	}
+
+	public override void Exit()
 	{
 	}
 	#endregion

@@ -13,6 +13,8 @@ public class WanderingCowState : CowState
 	private Vector3 _targetPosition = Vector3.zero;
 	private float _wanderingRange = 3f;
 	private float _threshold = .5f;
+
+	private float _wanderTimer = 5f;
 	#endregion
 
 	#region Constructors
@@ -25,12 +27,29 @@ public class WanderingCowState : CowState
 	#endregion
 
 	#region Life Cycle
+	public override void Enter()
+	{
+	}
+
 	public override void Run()
 	{
+		if(_wanderTimer > 0)
+		{
+			_wanderTimer -= Time.deltaTime;
+		}
+		else
+		{
+			_cow.SetState(new AsleepCowState(_cow));
+		}
+
 		if (TargetReached())
 			GenerateNewTargetPosition();
 
-		_cow.Move((_targetPosition - _cow.transform.position));
+		_cow.Move(_targetPosition - _cow.transform.position);
+	}
+
+	public override void Exit()
+	{
 	}
 	#endregion
 
@@ -40,7 +59,16 @@ public class WanderingCowState : CowState
 		Vector3 randomVector = Random.onUnitSphere * _wanderingRange;
 		randomVector.y = 0;
 		Debug.Log(randomVector);
+
 		_targetPosition = _cow.transform.position + randomVector;
+
+		ClampTargetPosition();
+	}
+
+	private void ClampTargetPosition()
+	{
+		_targetPosition.x = Mathf.Clamp(_targetPosition.x, -_cow.PastureSize.x + _threshold, _cow.PastureSize.x - _threshold);
+		_targetPosition.z = Mathf.Clamp(_targetPosition.z, -_cow.PastureSize.y + _threshold, _cow.PastureSize.y - _threshold);
 	}
 
 	private bool TargetReached()
