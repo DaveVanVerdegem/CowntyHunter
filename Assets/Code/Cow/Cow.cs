@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Cow : Agent
 {
 	#region Inspector Fields
+	public Vector2 PastureSize = Vector2.one;
 
 	public UnityEvent Tipped = new UnityEvent();
 	public UnityEvent Alerted = new UnityEvent();
@@ -33,6 +34,9 @@ public class Cow : Agent
 
 	private void OnDrawGizmosSelected()
 	{
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawWireCube(Vector3.zero, new Vector3(PastureSize.x * 2, 2f, PastureSize.y * 2));
+
 		if(State != null)
 			State.ShowDebugInfo();
 	}

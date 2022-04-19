@@ -40,7 +40,16 @@ public class WanderingCowState : CowState
 		Vector3 randomVector = Random.onUnitSphere * _wanderingRange;
 		randomVector.y = 0;
 		Debug.Log(randomVector);
+
 		_targetPosition = _cow.transform.position + randomVector;
+
+		ClampTargetPosition();
+	}
+
+	private void ClampTargetPosition()
+	{
+		_targetPosition.x = Mathf.Clamp(_targetPosition.x, -_cow.PastureSize.x + _threshold, _cow.PastureSize.x - _threshold);
+		_targetPosition.z = Mathf.Clamp(_targetPosition.z, -_cow.PastureSize.y + _threshold, _cow.PastureSize.y - _threshold);
 	}
 
 	private bool TargetReached()

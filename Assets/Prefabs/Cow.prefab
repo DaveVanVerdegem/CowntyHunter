@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
+  PastureSize: {x: 14, y: 10}
   Tipped:
     m_PersistentCalls:
       m_Calls: []
