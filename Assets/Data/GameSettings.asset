@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b1541e59cfc3d43a8a98265ec0fcc1, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  PastureSize: {x: 40, y: 24.5}
+  CowsInGame: 10
+  PastureSize: {x: 20, y: 14}
   _cowPrefabs:
   - {fileID: 1092748196634660401, guid: 13108a61d5810c44c87d6e6fd847d741, type: 3}
   - {fileID: 1684835962163904590, guid: ebce272b47fc9234b82d196023183dac, type: 3}
