@@ -36,6 +36,8 @@ public class CowManager : MonoBehaviour
 
 			cowsSpawned++;
 		}
+
+		GlobalEvents.CowTipped.AddListener(CheckCowsTipped);
 	}
 
 	private void Update()
@@ -55,6 +57,17 @@ public class CowManager : MonoBehaviour
 		float z = Random.Range(-Settings.PastureSize.y, Settings.PastureSize.y);
 
 		return new Vector3(x, 0, z);
+	}
+
+	private void CheckCowsTipped(Cow tippedCow, Player player)
+	{
+		foreach(Cow cow in Cow.Cows)
+		{
+			if (!cow.Tipped)
+				return;
+		}
+
+		GlobalEvents.GameOver?.Invoke(true);
 	}
 	#endregion
 }

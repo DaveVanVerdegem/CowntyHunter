@@ -80,8 +80,8 @@ public class Cow : Agent
 
 	private void Tip(Player player)
 	{
-		GlobalEvents.CowTipped?.Invoke(this, player);
 		SetState(new TippedCowState(this));
+		GlobalEvents.CowTipped?.Invoke(this, player);
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}
