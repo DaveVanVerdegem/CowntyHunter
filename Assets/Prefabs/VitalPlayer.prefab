@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8741672304115015073}
   - component: {fileID: 2253368561903912852}
   - component: {fileID: 7611180352928891014}
+  - component: {fileID: 8217562243327624374}
   - component: {fileID: 6890529535703052216}
   - component: {fileID: 7539559258970580040}
   m_Layer: 0
@@ -273,6 +274,26 @@ MonoBehaviour:
   - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
   - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
   - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
+  ScoreUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8217562243327624374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697951948404360669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7185d8ec5d61da044a20fb1ecbc1d552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerVisuals: []
+  ScoreUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerVisuals: []
   ScoreUpdated:
     m_PersistentCalls:
       m_Calls: []

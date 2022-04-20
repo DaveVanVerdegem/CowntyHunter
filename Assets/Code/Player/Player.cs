@@ -14,37 +14,49 @@ public class Player : MonoBehaviour
 	#region Properties
 	public int ID => _id;
 	public int Score { get; private set; } = 0;
+    public Cow BonusCow { get; private set; } = null;
+
+    public static List<Player> Players { get; private set; } = new List<Player>();
+
 	[HideInInspector] public UnityEvent<Player> ScoreUpdated = new UnityEvent<Player>();
 	#endregion
 
 	#region Fields
 	private CowDetector _cowDetector = null;
 	private int _id = 0;
-
-	private static List<Player> _players = new List<Player>();
-	#endregion
+    #endregion
 
 	#region Life Cycle
 	private void Awake()
 	{
         _cowDetector = GetComponentInChildren<CowDetector>();
 
-		_id = _players.Count;
+		_id = Players.Count;
 		Instantiate(_playerVisuals[_id], transform);
 
-		_players.Add(this);
+		Players.Add(this);
 
 		GlobalEvents.CowTipped.AddListener(AddScore);
     }
 
 	private void Start()
 	{
-		GlobalEvents.PlayerJoined?.Invoke(this);
+        foreach (Cow cow in Cow.Cows)
+        {
+            if (cow.Unique && !cow.Reserved)
+            {
+                BonusCow = cow;
+                BonusCow.Reserved = true;
+                break;
+            }
+        }
+
+        GlobalEvents.PlayerJoined?.Invoke(this);
 	}
 
     private void OnDestroy()
 	{
-		_players.Remove(this);
+		Players.Remove(this);
 	}
 	#endregion
 
@@ -63,11 +75,15 @@ public class Player : MonoBehaviour
 
     private void AddScore(Cow cow, Player player)
 	{
-		if (player != this) return;
+        if (player != this) return;
+        if (cow == null) return;
 
-		Score++;
+        if (cow == BonusCow)
+            Score += 5;
+        else
+            Score++;
 
-		ScoreUpdated?.Invoke(this);
+        ScoreUpdated?.Invoke(this);
 	}
 	#endregion
 }
