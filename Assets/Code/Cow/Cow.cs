@@ -14,6 +14,8 @@ public class Cow : Agent
 
 	#region Properties
 	public CowState State { get; private set; }
+	public bool Tipped => State.State == CowState.CowStateType.Tipped;
+
 	#endregion
 
 	#region Life Cycle
@@ -54,6 +56,8 @@ public class Cow : Agent
 
 	public bool TryToTip(Player player)
 	{
+		if (Tipped) return false;
+
 		bool tipped = State.CanBeTipped;
 
 		if (tipped)
