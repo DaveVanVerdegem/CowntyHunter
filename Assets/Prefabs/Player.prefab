@@ -264,7 +264,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &1890946159098426144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -436,6 +436,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CowDetected:
+    m_PersistentCalls:
+      m_Calls: []
+  CowLeft:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &2610341816405968614
