@@ -10,8 +10,7 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 	#region Inspector Fields
 	public int CowsInGame = 10;
 	public Vector2 PastureSize = new Vector2(40, 24.5f);
-	public Cow GenericCow = null;
-	[FormerlySerializedAs("_cowPrefabs")]
+	public List<Cow> GenericCows = new List<Cow>();
 	public List<Cow> CowPrefabs = new List<Cow>();
 	#endregion
 
@@ -36,7 +35,7 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 	#region Methods
 	public Cow GetRandomCowPrefab()
 	{
-		return CowPrefabs[Random.Range(0, CowPrefabs.Count)];
+		return GenericCows[Random.Range(0, GenericCows.Count)];
 	}
 	#endregion
 }

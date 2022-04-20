@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CowsInGame: 10
   PastureSize: {x: 20, y: 14}
-  GenericCow: {fileID: 5228992502676326305, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
-  CowPrefabs:
+  GenericCows:
+  - {fileID: 5228992502676326305, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
   - {fileID: 1092748196634660401, guid: 13108a61d5810c44c87d6e6fd847d741, type: 3}
   - {fileID: 1684835962163904590, guid: ebce272b47fc9234b82d196023183dac, type: 3}
+  CowPrefabs:
+  - {fileID: 3215261543439867145, guid: 3605d69401c01e243a78a2e9923d1fa0, type: 3}
   - {fileID: 3215261543439867145, guid: e0912c75fa126864f92d9f26eda06e13, type: 3}
+  - {fileID: 3215261543439867145, guid: 3efcdd3a2f013294aaa54f6c063953ee, type: 3}
+  - {fileID: 3215261543439867145, guid: d72a26a6ad4e41f468f738dae116b69b, type: 3}

@@ -30,7 +30,7 @@ public class CowManager : MonoBehaviour
 			if (cowsSpawned < Settings.CowPrefabs.Count)
 				cow = Settings.CowPrefabs[i];
 			else
-				cow = Settings.GenericCow;
+				cow = Settings.GetRandomCowPrefab();
 
 			SpawnCow(cow, GetRandomPosition());
 
