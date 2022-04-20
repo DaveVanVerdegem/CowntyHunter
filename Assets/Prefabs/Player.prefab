@@ -143,12 +143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5fc1f5f1ed6d449821f65a24e9d204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 4
   _playerVisuals:
   - {fileID: 1785713495843658, guid: e619736e4c44c402ca76ed0015fbbac6, type: 3}
   - {fileID: 1531611422558296632, guid: 584837a62194688429b94b282a4b71b0, type: 3}
   - {fileID: 1355939552899420, guid: d361d451b3a88425680f39931593c150, type: 3}
   - {fileID: 6761243396841767861, guid: 71b07a42af3aa2e44ad755b9b30b42e6, type: 3}
+  ScoreUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8741672304115015073
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,8 +7,10 @@ using static Foundation.Patterns.Facade;
 public class Cow : Agent
 {
 	#region Inspector Fields
+	public bool Unique = false;
 	[Multiline]
 	public string Description = "The cow with the spots.";
+	public Sprite Sprite = null;
 	#endregion
 
 	#region Properties
@@ -16,6 +18,7 @@ public class Cow : Agent
 	public bool Tipped => State.State == CowState.CowStateType.Tipped;
 
 	public static List<Cow> Cows { get; private set; } = new List<Cow>();
+	[HideInInspector] public bool Reserved = false;
 	#endregion
 
 	#region Life Cycle
@@ -78,8 +81,8 @@ public class Cow : Agent
 
 	private void Tip(Player player)
 	{
-		GlobalEvents.CowTipped?.Invoke(this, player);
 		SetState(new TippedCowState(this));
+		GlobalEvents.CowTipped?.Invoke(this, player);
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}

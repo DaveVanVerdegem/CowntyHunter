@@ -16,6 +16,8 @@ public class Player : Agent
 	public int Score { get; private set; } = 0;
 	public Cow BonusCow { get; private set; } = null;
 
+	public static List<Player> Players { get; private set; } = new List<Player>();
+
 	[HideInInspector] public UnityEvent<Player> ScoreUpdated = new UnityEvent<Player>();
 	#endregion
 
@@ -23,8 +25,6 @@ public class Player : Agent
 	private CowDetector _cowDetector = null;
 	private Vector2 _movement = Vector2.zero;
 	private int _id = 0;
-
-	private static List<Player> _players = new List<Player>();
 	#endregion
 
 	#region Life Cycle
@@ -32,17 +32,25 @@ public class Player : Agent
 	{
 		_cowDetector = GetComponentInChildren<CowDetector>();
 
-		_id = _players.Count;
 		Instantiate(_playerVisuals[_id], transform);
 
-		_players.Add(this);
+		Players.Add(this);
+		_id = Players.Count;
 
 		GlobalEvents.CowTipped.AddListener(AddScore);
 	}
 
 	private void Start()
 	{
-		BonusCow = Cow.Cows[Random.Range(0, Cow.Cows.Count)];
+		foreach(Cow cow in Cow.Cows)
+		{
+			if(cow.Unique && !cow.Reserved)
+			{
+				BonusCow = cow;
+				BonusCow.Reserved = true;
+				break;
+			}			
+		}
 
 		GlobalEvents.PlayerJoined?.Invoke(this);
 	}
@@ -54,7 +62,7 @@ public class Player : Agent
 
 	private void OnDestroy()
 	{
-		_players.Remove(this);
+		Players.Remove(this);
 	}
 	#endregion
 
