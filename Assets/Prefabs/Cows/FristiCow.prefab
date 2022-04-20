@@ -16,6 +16,10 @@ PrefabInstance:
       value: FristiCow
       objectReference: {fileID: 0}
     - target: {fileID: 5228992502676326305, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
+      propertyPath: Unique
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228992502676326305, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
       propertyPath: Description
       value: A cow that tastes like Fristi.
       objectReference: {fileID: 0}

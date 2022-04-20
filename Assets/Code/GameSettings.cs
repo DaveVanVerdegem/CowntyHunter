@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName ="Cownty Hunter/Game Settings")]
 public class GameSettings : ScriptableSingleton<GameSettings>
@@ -10,7 +10,9 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 	#region Inspector Fields
 	public int CowsInGame = 10;
 	public Vector2 PastureSize = new Vector2(40, 24.5f);
-	[SerializeField] private List<Cow> _cowPrefabs = new List<Cow>();
+	public Cow GenericCow = null;
+	[FormerlySerializedAs("_cowPrefabs")]
+	public List<Cow> CowPrefabs = new List<Cow>();
 	#endregion
 
 	#region Properties
@@ -34,7 +36,7 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 	#region Methods
 	public Cow GetRandomCowPrefab()
 	{
-		return _cowPrefabs[Random.Range(0, _cowPrefabs.Count)];
+		return CowPrefabs[Random.Range(0, CowPrefabs.Count)];
 	}
 	#endregion
 }

@@ -42,7 +42,15 @@ public class Player : Agent
 
 	private void Start()
 	{
-		BonusCow = Cow.Cows[Random.Range(0, Cow.Cows.Count)];
+		foreach(Cow cow in Cow.Cows)
+		{
+			if(cow.Unique && !cow.Reserved)
+			{
+				BonusCow = cow;
+				BonusCow.Reserved = true;
+				break;
+			}			
+		}
 
 		GlobalEvents.PlayerJoined?.Invoke(this);
 	}

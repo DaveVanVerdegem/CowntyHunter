@@ -7,6 +7,7 @@ using static Foundation.Patterns.Facade;
 public class Cow : Agent
 {
 	#region Inspector Fields
+	public bool Unique = false;
 	[Multiline]
 	public string Description = "The cow with the spots.";
 	#endregion
@@ -16,6 +17,7 @@ public class Cow : Agent
 	public bool Tipped => State.State == CowState.CowStateType.Tipped;
 
 	public static List<Cow> Cows { get; private set; } = new List<Cow>();
+	[HideInInspector] public bool Reserved = false;
 	#endregion
 
 	#region Life Cycle

@@ -22,9 +22,19 @@ public class CowManager : MonoBehaviour
 	{
 		//List<Cow> cows = 
 
+		int cowsSpawned = 0;
+
 		for (int i = 0; i < Settings.CowsInGame; i++)
 		{
-			SpawnCow(GetRandomPosition());
+			Cow cow = null;
+			if (cowsSpawned < Settings.CowPrefabs.Count)
+				cow = Settings.CowPrefabs[i];
+			else
+				cow = Settings.GenericCow;
+
+			SpawnCow(cow, GetRandomPosition());
+
+			cowsSpawned++;
 		}
 	}
 
@@ -34,9 +44,9 @@ public class CowManager : MonoBehaviour
 	#endregion
 
 	#region Methods
-	private void SpawnCow(Vector3 position)
+	private void SpawnCow(Cow cow, Vector3 position)
 	{
-		Instantiate(Settings.GetRandomCowPrefab(), position, Quaternion.AngleAxis(Random.Range(0, 180f), Vector3.up));
+		Instantiate(cow, position, Quaternion.AngleAxis(Random.Range(0, 180f), Vector3.up));
 	}
 
 	private Vector3 GetRandomPosition()
