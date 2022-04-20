@@ -103,6 +103,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFour
       objectReference: {fileID: 0}
+    - target: {fileID: 5662723869280781546, guid: 9f5846632270de549ab13c17bc71854a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662723869280781546, guid: 9f5846632270de549ab13c17bc71854a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662723869280781546, guid: 9f5846632270de549ab13c17bc71854a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662723869280781546, guid: 9f5846632270de549ab13c17bc71854a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7029987845536356848, guid: 9f5846632270de549ab13c17bc71854a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

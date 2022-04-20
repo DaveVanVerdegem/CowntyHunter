@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b1541e59cfc3d43a8a98265ec0fcc1, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  PastureSize: {x: 40, y: 24.5}
+  _cowPrefabs:
+  - {fileID: 1092748196634660401, guid: 13108a61d5810c44c87d6e6fd847d741, type: 3}
+  - {fileID: 1684835962163904590, guid: ebce272b47fc9234b82d196023183dac, type: 3}
+  - {fileID: 3215261543439867145, guid: e0912c75fa126864f92d9f26eda06e13, type: 3}

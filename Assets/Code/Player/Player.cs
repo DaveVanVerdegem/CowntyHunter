@@ -14,6 +14,7 @@ public class Player : Agent
 	#region Properties
 	public int ID => _id;
 	public int Score { get; private set; } = 0;
+	public Cow BonusCow { get; private set; } = null;
 
 	[HideInInspector] public UnityEvent<Player> ScoreUpdated = new UnityEvent<Player>();
 	#endregion
@@ -41,6 +42,8 @@ public class Player : Agent
 
 	private void Start()
 	{
+		BonusCow = Cow.Cows[Random.Range(0, Cow.Cows.Count)];
+
 		GlobalEvents.PlayerJoined?.Invoke(this);
 	}
 
@@ -81,8 +84,12 @@ public class Player : Agent
 	private void AddScore(Cow cow, Player player)
 	{
 		if (player != this) return;
+		if(cow == null) return;
 
-		Score++;
+		if (cow == BonusCow)
+			Score += 5;
+		else
+			Score++;
 
 		ScoreUpdated?.Invoke(this);
 	}

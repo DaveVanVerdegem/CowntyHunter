@@ -7,15 +7,15 @@ using static Foundation.Patterns.Facade;
 public class Cow : Agent
 {
 	#region Inspector Fields
-	public Vector2 PastureSize = Vector2.one;
-
-
+	[Multiline]
+	public string Description = "The cow with the spots.";
 	#endregion
 
 	#region Properties
 	public CowState State { get; private set; }
 	public bool Tipped => State.State == CowState.CowStateType.Tipped;
 
+	public static List<Cow> Cows { get; private set; } = new List<Cow>();
 	#endregion
 
 	#region Life Cycle
@@ -27,6 +27,8 @@ public class Cow : Agent
 	private void Initialize()
 	{
 		SetState(new AsleepCowState(this));
+
+		Cows.Add(this);
 	}
 
 	private void Update()
@@ -37,10 +39,16 @@ public class Cow : Agent
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.cyan;
-		Gizmos.DrawWireCube(Vector3.zero, new Vector3(PastureSize.x * 2, 2f, PastureSize.y * 2));
+		Vector2 pastureSize = GameSettings.instance.PastureSize;
+		Gizmos.DrawWireCube(Vector3.zero, new Vector3(pastureSize.x * 2, 2f, pastureSize.y * 2));
 
 		if(State != null)
 			State.ShowDebugInfo();
+	}
+
+	private void OnDisable()
+	{
+		Cows.Remove(this);
 	}
 	#endregion
 

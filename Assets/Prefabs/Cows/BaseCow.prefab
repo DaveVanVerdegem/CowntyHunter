@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5228992502676326305}
   - component: {fileID: 2019889051}
   m_Layer: 0
-  m_Name: Cow
+  m_Name: BaseCow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

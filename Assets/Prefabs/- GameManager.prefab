@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2164388741597923687
+--- !u!1 &3016276909667006459
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3200413698359615653}
-  - component: {fileID: 934653460191230231}
+  - component: {fileID: 1756384925104972524}
+  - component: {fileID: 7721654118212461811}
+  - component: {fileID: 7626966113000914841}
+  - component: {fileID: 9173492173574689171}
   m_Layer: 0
-  m_Name: '- PlayerManager'
+  m_Name: '- GameManager'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3200413698359615653
+--- !u!4 &1756384925104972524
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164388741597923687}
+  m_GameObject: {fileID: 3016276909667006459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934653460191230231
+--- !u!114 &7721654118212461811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164388741597923687}
+  m_GameObject: {fileID: 3016276909667006459}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
@@ -75,3 +77,36 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &7626966113000914841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016276909667006459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170a0a7f3a6359b4f8e6dcfe4fa69f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerJoined:
+    m_PersistentCalls:
+      m_Calls: []
+  CowTipped:
+    m_PersistentCalls:
+      m_Calls: []
+  CowAlerted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9173492173574689171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016276909667006459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d816c28e1c2694a4fa5c2d69ca4e75a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

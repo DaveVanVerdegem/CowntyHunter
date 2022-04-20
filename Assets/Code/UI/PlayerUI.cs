@@ -7,6 +7,7 @@ public class PlayerUI : MonoBehaviour
 {
 	#region Inspector Fields
 	[SerializeField] private TextMeshProUGUI _scoreText;
+	[SerializeField] private TextMeshProUGUI _bonusCowDescriptionText;
 	#endregion
 
 	#region Properties
@@ -34,6 +35,7 @@ public class PlayerUI : MonoBehaviour
 
 		_player = player;
 		UpdateScore(_player);
+		_bonusCowDescriptionText.text = _player.BonusCow.Description;
 
 		_player.ScoreUpdated.AddListener(UpdateScore);
 	}

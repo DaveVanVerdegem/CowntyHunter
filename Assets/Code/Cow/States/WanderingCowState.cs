@@ -67,8 +67,9 @@ public class WanderingCowState : CowState
 
 	private void ClampTargetPosition()
 	{
-		_targetPosition.x = Mathf.Clamp(_targetPosition.x, -_cow.PastureSize.x + _threshold, _cow.PastureSize.x - _threshold);
-		_targetPosition.z = Mathf.Clamp(_targetPosition.z, -_cow.PastureSize.y + _threshold, _cow.PastureSize.y - _threshold);
+		Vector2 pastureSize = GameSettings.instance.PastureSize;
+		_targetPosition.x = Mathf.Clamp(_targetPosition.x, -pastureSize.x + _threshold, pastureSize.x - _threshold);
+		_targetPosition.z = Mathf.Clamp(_targetPosition.z, -pastureSize.y + _threshold, pastureSize.y - _threshold);
 	}
 
 	private bool TargetReached()
