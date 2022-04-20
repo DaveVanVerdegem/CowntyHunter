@@ -11,7 +11,12 @@ public class GlobalEventManager : Singleton<GlobalEventManager>
 	#endregion
 
 	#region Properties
+	// Players
 	public UnityEvent<Player> PlayerJoined = new UnityEvent<Player>();
+
+	// Cows
+	public UnityEvent<Cow, Player> CowTipped = new UnityEvent<Cow, Player>();
+	public UnityEvent<Cow, Player> CowAlerted = new UnityEvent<Cow, Player>();
 	#endregion
 
 	#region Fields

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static Foundation.Patterns.Facade;
 
 public class Cow : Agent
 {
 	#region Inspector Fields
 	public Vector2 PastureSize = Vector2.one;
 
-	public UnityEvent Tipped = new UnityEvent();
-	public UnityEvent Alerted = new UnityEvent();
+
 	#endregion
 
 	#region Properties
@@ -52,29 +52,29 @@ public class Cow : Agent
 		State.Enter();
 	}
 
-	public bool TryToTip()
+	public bool TryToTip(Player player)
 	{
 		bool tipped = State.CanBeTipped;
 
 		if (tipped)
-			Tip();
+			Tip(player);
 		else
-			Alert();
+			Alert(player);
 
 		return tipped;
 	}
 
-	private void Tip()
+	private void Tip(Player player)
 	{
-		Tipped?.Invoke();
+		GlobalEvents.CowTipped?.Invoke(this, player);
 		SetState(new TippedCowState(this));
 
 		Debug.Log($"{gameObject.name} has been tipped.");
 	}
 
-	private void Alert()
+	private void Alert(Player player)
 	{
-		Alerted?.Invoke();
+		GlobalEvents.CowAlerted?.Invoke(this, player);
 		SetState(new WanderingCowState(this));
 
 		Debug.Log($"{gameObject.name} has been alerted.");

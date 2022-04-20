@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Foundation.Patterns.Facade;
 
 public class GameCanvas : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GameCanvas : MonoBehaviour
 	#region Life Cycle
 	private void Awake()
 	{
-		GlobalEventManager.Instance.PlayerJoined.AddListener(InitializePlayerUI);
+		GlobalEvents.PlayerJoined.AddListener(InitializePlayerUI);
 	}
 
 	private void Start()

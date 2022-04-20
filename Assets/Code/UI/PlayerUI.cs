@@ -33,7 +33,9 @@ public class PlayerUI : MonoBehaviour
 		if (player == null) return;
 
 		_player = player;
-		_scoreText.text = "0";
+		UpdateScore(_player);
+
+		_player.ScoreUpdated.AddListener(UpdateScore);
 	}
 
 	private void Update()
@@ -42,6 +44,9 @@ public class PlayerUI : MonoBehaviour
 	#endregion
 
 	#region Methods
-
+	private void UpdateScore(Player player)
+	{
+		_scoreText.text = player.Score.ToString();
+	}
 	#endregion
 }

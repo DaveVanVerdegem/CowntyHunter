@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using static Foundation.Patterns.Facade;
 
 public class Player : Agent
 {
 	#region Inspector Fields
 	[SerializeField] private List<GameObject> _playerVisuals = new List<GameObject>();
+	#endregion
+
+	#region Properties
+	public int ID => _id;
+	public int Score { get; private set; } = 0;
+
+	[HideInInspector] public UnityEvent<Player> ScoreUpdated = new UnityEvent<Player>();
 	#endregion
 
 	#region Fields
@@ -26,11 +35,13 @@ public class Player : Agent
 		Instantiate(_playerVisuals[_id], transform);
 
 		_players.Add(this);
+
+		GlobalEvents.CowTipped.AddListener(AddScore);
 	}
 
 	private void Start()
 	{
-		GlobalEventManager.Instance.PlayerJoined?.Invoke(this);
+		GlobalEvents.PlayerJoined?.Invoke(this);
 	}
 
 	private void Update()
@@ -55,7 +66,7 @@ public class Player : Agent
 		if (!callback.performed) return;
 
 		if (_cowDetector.CowFound)
-			_cowDetector.Cow.TryToTip();
+			_cowDetector.Cow.TryToTip(this);
 	}
 	#endregion
 
@@ -65,6 +76,15 @@ public class Player : Agent
 		if (_movement.Equals(Vector2.zero)) return;
 
 		Move(_movement.normalized);
+	}
+
+	private void AddScore(Cow cow, Player player)
+	{
+		if (player != this) return;
+
+		Score++;
+
+		ScoreUpdated?.Invoke(this);
 	}
 	#endregion
 }
