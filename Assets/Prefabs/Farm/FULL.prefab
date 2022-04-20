@@ -78146,9 +78146,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 146266373433710240, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 827318476303616503, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
       propertyPath: m_Name
       value: Huis
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577526117490243571, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815292320462248272, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471224344514271223, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241562994597724869, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769291299800914970, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103389126186970669, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132368723773816926, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149491556660485558, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251256325115936825, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162323760221843153, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6852e4c5ac93ff948809084fd206aa5f, type: 3}
