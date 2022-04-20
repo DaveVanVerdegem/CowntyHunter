@@ -10,6 +10,7 @@ public class Cow : Agent
 	public bool Unique = false;
 	[Multiline]
 	public string Description = "The cow with the spots.";
+	public Sprite Sprite = null;
 	#endregion
 
 	#region Properties
