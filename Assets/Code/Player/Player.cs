@@ -9,6 +9,7 @@ public class Player : Agent
 {
 	#region Inspector Fields
 	[SerializeField] private List<GameObject> _playerVisuals = new List<GameObject>();
+	[SerializeField] private List<Color> _flashLightColors = new List<Color>();
 	#endregion
 
 	#region Properties
@@ -24,14 +25,17 @@ public class Player : Agent
 	#region Fields
 	private CowDetector _cowDetector = null;
 	private int _id = 0;
+	private Light _flashLight = null;
     #endregion
 
 	#region Life Cycle
 	private void Awake()
 	{
         _cowDetector = GetComponentInChildren<CowDetector>();
+		_flashLight = GetComponentInChildren<Light>();
 
 		Instantiate(_playerVisuals[Players.Count], transform);
+		_flashLight.color = _flashLightColors[Players.Count];
 
 		Players.Add(this);
 		_id = Players.Count;
