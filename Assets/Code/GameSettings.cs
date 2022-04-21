@@ -14,6 +14,9 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 	public List<Cow> CowPrefabs = new List<Cow>();
 
 	public Noise NoisePrefab = null;
+
+	public int StartingPoops = 10;
+	public Poop PoopPrefab = null;
 	#endregion
 
 	#region Properties

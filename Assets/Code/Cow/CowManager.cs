@@ -37,6 +37,11 @@ public class CowManager : MonoBehaviour
 			cowsSpawned++;
 		}
 
+		for (int i = 0; i < Settings.StartingPoops; i++)
+		{
+			Instantiate(Settings.PoopPrefab, GetRandomPosition(), Quaternion.identity);
+		}
+
 		GlobalEvents.CowTipped.AddListener(CheckCowsTipped);
 	}
 

@@ -24,3 +24,5 @@ MonoBehaviour:
   - {fileID: 3215261543439867145, guid: 3efcdd3a2f013294aaa54f6c063953ee, type: 3}
   - {fileID: 3215261543439867145, guid: d72a26a6ad4e41f468f738dae116b69b, type: 3}
   NoisePrefab: {fileID: 41331219513903902, guid: 41e5c47673821ea41bf90907342c0a4b, type: 3}
+  StartingPoops: 10
+  PoopPrefab: {fileID: 8451972060535360572, guid: c607cecd25fc4c34ca76ef39471bb83c, type: 3}

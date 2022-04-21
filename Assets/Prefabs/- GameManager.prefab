@@ -67,7 +67,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6697951948404360669, guid: a8edc3e32d810fe4e98afcda34401535, type: 3}
+  m_PlayerPrefab: {fileID: 6697951948404360669, guid: 228336c5df007544a8fbbf472bd88749, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -96,6 +96,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   CowAlerted:
+    m_PersistentCalls:
+      m_Calls: []
+  GameOver:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &9173492173574689171

@@ -23,6 +23,8 @@ public class TippedCowState : CowState
 	public override void Enter()
 	{
 		Settings.SpawnNoise(_cow.transform.position);
+
+		Object.Instantiate(Settings.PoopPrefab, _cow.transform.position + (_cow.transform.forward* 1.5f), Quaternion.identity);
 	}
 
 	public override void Run()

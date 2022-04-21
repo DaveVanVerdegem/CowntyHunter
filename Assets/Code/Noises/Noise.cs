@@ -42,7 +42,6 @@ public class Noise : MonoBehaviour
 			hearable.HearNoise(this);
 
 			Debug.Log($"{hearable} heard this noise.");
-			//CowDetected?.Invoke(Cow);
 		}
 	}
 
@@ -52,8 +51,7 @@ public class Noise : MonoBehaviour
 		{
 			if (!_hearables.Contains(hearable)) return;
 
-			//Debug.Log($"{hearable} left detector.");
-			//CowLeft?.Invoke(cow);
+			_hearables.Remove(hearable);
 		}
 	}
 	#endregion
@@ -64,7 +62,7 @@ public class Noise : MonoBehaviour
 		while(gameObject.activeSelf)
 		{
 			SetStrength();
-			transform.localScale = Vector3.one * _strength;
+			transform.localScale = new Vector3(_strength, 1, _strength);
 
 			_lifetime += Time.deltaTime;
 

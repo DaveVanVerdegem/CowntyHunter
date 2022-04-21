@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static Foundation.Patterns.Facade;
 
-public class Player : MonoBehaviour
+public class Player : Agent
 {
 	#region Inspector Fields
 	[SerializeField] private List<GameObject> _playerVisuals = new List<GameObject>();
