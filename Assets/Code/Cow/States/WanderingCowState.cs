@@ -22,7 +22,8 @@ public class WanderingCowState : CowState
 	#region Constructors
 	public WanderingCowState(Cow cow) : base(cow)
 	{
-		Debug.Log($"{_cow.name} is wandering.");
+		//Debug.Log($"{_cow.name} is wandering.");
+		_cow.AlertedBillboard.Blink();
 
 		GenerateNewTargetPosition();
 	}

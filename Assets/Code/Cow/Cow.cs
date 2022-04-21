@@ -12,6 +12,9 @@ public class Cow : Agent, IHearable
 	public string Description = "The cow with the spots.";
 	public Sprite Sprite = null;
 	public Transform TippingPoint = null;
+
+	public Billboard AlertedBillboard = null;
+	public Billboard SleepingBillboard = null;
 	#endregion
 
 	#region Properties
@@ -42,6 +45,8 @@ public class Cow : Agent, IHearable
 
 	private void OnDrawGizmosSelected()
 	{
+		if (Settings == null) return;
+
 		Gizmos.color = Color.cyan;
 		Vector2 pastureSize = Settings.PastureSize;
 		Gizmos.DrawWireCube(Vector3.zero, new Vector3(pastureSize.x * 2, 2f, pastureSize.y * 2));
@@ -84,7 +89,7 @@ public class Cow : Agent, IHearable
 		SetState(new TippedCowState(this));
 		GlobalEvents.CowTipped?.Invoke(this, player);
 
-		Debug.Log($"{gameObject.name} has been tipped.");
+		//Debug.Log($"{gameObject.name} has been tipped.");
 	}
 
 	private void Alert(Player player)
@@ -92,12 +97,12 @@ public class Cow : Agent, IHearable
 		GlobalEvents.CowAlerted?.Invoke(this, player);
 		SetState(new WanderingCowState(this));
 
-		Debug.Log($"{gameObject.name} has been alerted.");
+		//Debug.Log($"{gameObject.name} has been alerted.");
 	}
 
 	public void HearNoise(Noise noise)
 	{
-		Debug.LogWarning($"{name} heard noise.");
+		//Debug.LogWarning($"{name} heard noise.");
 		if(State.CanBeAlerted)
 			SetState(new WanderingCowState(this));
 	}

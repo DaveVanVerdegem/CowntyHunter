@@ -6,7 +6,6 @@ public class Noise : MonoBehaviour
 {
 	#region Inspector Fields
 	[SerializeField] private float _noiseMagnitude = 5f;
-	[SerializeField] private SphereCollider _collider = null;
 	[SerializeField] private float _duration = 1f;
 	[SerializeField] private AnimationCurve _curve = null;
 	#endregion

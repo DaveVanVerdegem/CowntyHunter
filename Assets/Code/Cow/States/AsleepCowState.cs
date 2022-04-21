@@ -13,7 +13,8 @@ public class AsleepCowState : CowState
 	#region Constructors
 	public AsleepCowState(Cow cow) : base(cow)
 	{
-		Debug.Log($"{_cow.name} is asleep.");
+		//Debug.Log($"{_cow.name} is asleep.");
+		_cow.SleepingBillboard.Show();
 	}
 	#endregion
 
@@ -24,6 +25,7 @@ public class AsleepCowState : CowState
 
 	public override void Exit()
 	{
+		_cow.SleepingBillboard.Hide();
 	}
 	#endregion
 
