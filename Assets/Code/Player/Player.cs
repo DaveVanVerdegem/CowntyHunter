@@ -31,10 +31,10 @@ public class Player : MonoBehaviour
 	{
         _cowDetector = GetComponentInChildren<CowDetector>();
 
-		_id = Players.Count;
 		Instantiate(_playerVisuals[_id], transform);
 
 		Players.Add(this);
+		_id = Players.Count;
 
 		GlobalEvents.CowTipped.AddListener(AddScore);
     }

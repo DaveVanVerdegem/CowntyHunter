@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
         _groundMovement.Move.canceled += ctx => _horizontalInput = Vector2.zero;
         _groundMovement.Move.canceled += ctx => _movement.ApplyStopMovement();
 
-        _groundMovement.Fire.performed += ctx => Push(ctx);
+        _groundMovement.Push.performed += ctx => Push(ctx);
     }
 
     private void OnEnable()
