@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
     
     private void Update()
     {
-        _movement.ReceiveInput(_horizontalInput);
+        //_movement.ReceiveInput(_horizontalInput);
     }
 
     private void Push(InputAction.CallbackContext context)

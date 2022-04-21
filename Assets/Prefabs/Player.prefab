@@ -140,15 +140,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6697951948404360669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5fc1f5f1ed6d449821f65a24e9d204, type: 3}
+  m_Script: {fileID: 11500000, guid: 7185d8ec5d61da044a20fb1ecbc1d552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
   _playerVisuals:
-  - {fileID: 1785713495843658, guid: e619736e4c44c402ca76ed0015fbbac6, type: 3}
-  - {fileID: 1531611422558296632, guid: 584837a62194688429b94b282a4b71b0, type: 3}
-  - {fileID: 1355939552899420, guid: d361d451b3a88425680f39931593c150, type: 3}
-  - {fileID: 6761243396841767861, guid: 71b07a42af3aa2e44ad755b9b30b42e6, type: 3}
+  - {fileID: 8118585345989187193, guid: 0d6e7cc8f90eab244a791e11c44ed808, type: 3}
+  - {fileID: 2052542832036999120, guid: 394f55b5b8a10e44d999f3d80ba829c3, type: 3}
+  - {fileID: 4199222227980488593, guid: 6c73c541b35a1ed489674c91babd6be5, type: 3}
+  - {fileID: 3784348472630730586, guid: 8d30d601d271bc343a120ad03de52ac3, type: 3}
   ScoreUpdated:
     m_PersistentCalls:
       m_Calls: []

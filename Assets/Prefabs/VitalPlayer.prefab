@@ -106,9 +106,7 @@ GameObject:
   - component: {fileID: 7404780500941417340}
   - component: {fileID: 8741672304115015073}
   - component: {fileID: 2253368561903912852}
-  - component: {fileID: 7611180352928891014}
   - component: {fileID: 8217562243327624374}
-  - component: {fileID: 6890529535703052216}
   - component: {fileID: 7539559258970580040}
   m_Layer: 0
   m_Name: VitalPlayer
@@ -160,13 +158,25 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 7539559258970580040}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6697951948404360669}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -180,10 +190,22 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8217562243327624374}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnTryTipping
+        m_MethodName: TryTipping
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7539559258970580040}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: ApplyPush
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -257,26 +279,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7611180352928891014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697951948404360669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5fc1f5f1ed6d449821f65a24e9d204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerVisuals:
-  - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
-  - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
-  - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
-  - {fileID: 7955783173213201465, guid: bd1fb4aa60428cc408c2df473592175f, type: 3}
-  ScoreUpdated:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8217562243327624374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,27 +291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7185d8ec5d61da044a20fb1ecbc1d552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerVisuals: []
+  _playerVisuals:
+  - {fileID: 7492548680103181247, guid: fbbff6293b457094e984138199ac9258, type: 3}
+  - {fileID: 8118585345989187193, guid: 0d6e7cc8f90eab244a791e11c44ed808, type: 3}
+  - {fileID: 2052542832036999120, guid: 394f55b5b8a10e44d999f3d80ba829c3, type: 3}
+  - {fileID: 3784348472630730586, guid: 8d30d601d271bc343a120ad03de52ac3, type: 3}
   ScoreUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _playerVisuals: []
-  ScoreUpdated:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6890529535703052216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697951948404360669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca72408e6c642a4387720aaf96d7dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movement: {fileID: 0}
 --- !u!114 &7539559258970580040
 MonoBehaviour:
   m_ObjectHideFlags: 0

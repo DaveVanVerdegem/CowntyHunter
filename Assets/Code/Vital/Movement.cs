@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -49,13 +50,9 @@ public class Movement : MonoBehaviour
             }
         }
     }
-
+    private Vector3 current_pos;
+    private Vector3 last_pos;
     private float _pushTimer = 0;
-
-    public void ReceiveInput(Vector2 horizontalInput)
-    {
-        _horizontalInput = horizontalInput;
-    }
 
     [HideInInspector] public Animator Animator;
     
@@ -65,11 +62,32 @@ public class Movement : MonoBehaviour
         _jumpForce = -Physics.gravity.normalized * Mathf.Sqrt(2 * Physics.gravity.magnitude * _jumpHeight);
         _defaultYPos = _eyes.position.y;
         Animator = GetComponentInChildren<Animator>();
+
+        current_pos = transform.position;
+        last_pos = transform.position;
+
     }
     private void Update()
     {
         _movement = new Vector3(_horizontalInput.x, 0, _horizontalInput.y);
-        Animator.SetFloat("Velocity", _movement.normalized.magnitude);
+    }
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+            ApplyStartMovement();
+        else if (ctx.performed)
+        {
+            _horizontalInput = ctx.ReadValue<Vector2>();
+            Animator.SetFloat("Velocity", ctx.ReadValue<Vector2>().magnitude);
+        }
+            
+        else if (ctx.canceled)
+        {
+            _horizontalInput = Vector2.zero;
+            ApplyStopMovement();
+        }
+            
     }
 
     private void FixedUpdate()
@@ -80,6 +98,7 @@ public class Movement : MonoBehaviour
 
         if (_pushTimer <= 0)
         {
+            Animator.SetBool("Pushing", false);
             ApplyFinalMovement();
             ApplyRotation();
         }
@@ -87,11 +106,9 @@ public class Movement : MonoBehaviour
         {
             _pushTimer -= Time.fixedDeltaTime;
         }
-        
         //ApplyBob();
         ApplyGroundDrag();
 
-        
     }
 
     public void ApplyStartMovement()
@@ -121,7 +138,6 @@ public class Movement : MonoBehaviour
         //if (_willSlide && _isSliding)
         //    _velocity += new Vector3(_hitNormal.x, -_hitNormal.y, _hitNormal.z) * _slideSpeed;
        _controller.Move(_velocity * Time.fixedDeltaTime);
-
     }
 
     private void ApplyRotation()
@@ -179,8 +195,9 @@ public class Movement : MonoBehaviour
 
     public void ApplyPush()
     {
-        if (!Animator.GetBool("Moving"))
+        if (!Animator.GetBool("Moving") && !Animator.GetBool("Pushing"))
         {
+            Animator.SetBool("Pushing", true);
             Animator.SetTrigger("PushTrigger");
             _pushTimer = 2f;
         }
