@@ -94,8 +94,8 @@ public class Cow : Agent, IHearable
 
 	private void Alert(Player player)
 	{
+		SetState(new AlertedCowState(this));
 		GlobalEvents.CowAlerted?.Invoke(this, player);
-		SetState(new WanderingCowState(this));
 
 		//Debug.Log($"{gameObject.name} has been alerted.");
 	}
@@ -103,8 +103,8 @@ public class Cow : Agent, IHearable
 	public void HearNoise(Noise noise)
 	{
 		//Debug.LogWarning($"{name} heard noise.");
-		if(State.CanBeAlerted)
-			SetState(new WanderingCowState(this));
+		if (State.CanBeAlerted)
+			Alert(null);
 	}
 	#endregion
 }

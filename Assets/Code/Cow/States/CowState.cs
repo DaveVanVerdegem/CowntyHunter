@@ -9,7 +9,7 @@ public abstract class CowState
 	{
 		Asleep = 0,
 		Tipped = 1,
-		Wandering = 2,
+		Alerted = 2,
 	}
 	#endregion
 

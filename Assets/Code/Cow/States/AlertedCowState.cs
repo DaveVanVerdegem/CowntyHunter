@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Foundation.Patterns.Facade;
 
-public class WanderingCowState : CowState
+public class AlertedCowState : CowState
 {
 	#region Properties
-	public override CowStateType State => CowStateType.Wandering;
+	public override CowStateType State => CowStateType.Alerted;
 	public override bool CanBeTipped => false;
-	public override bool CanBeAlerted => true;
+	public override bool CanBeAlerted => false;
 	#endregion
 
 	#region Fields
@@ -20,7 +20,7 @@ public class WanderingCowState : CowState
 	#endregion
 
 	#region Constructors
-	public WanderingCowState(Cow cow) : base(cow)
+	public AlertedCowState(Cow cow) : base(cow)
 	{
 		//Debug.Log($"{_cow.name} is wandering.");
 		_cow.AlertedBillboard.Blink();
