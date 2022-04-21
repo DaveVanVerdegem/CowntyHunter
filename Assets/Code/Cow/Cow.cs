@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using static Foundation.Patterns.Facade;
 
-public class Cow : Agent
+public class Cow : Agent, IHearable
 {
 	#region Inspector Fields
 	public bool Unique = false;
@@ -93,6 +93,13 @@ public class Cow : Agent
 		SetState(new WanderingCowState(this));
 
 		Debug.Log($"{gameObject.name} has been alerted.");
+	}
+
+	public void HearNoise(Noise noise)
+	{
+		Debug.LogWarning($"{name} heard noise.");
+		if(State.CanBeAlerted)
+			SetState(new WanderingCowState(this));
 	}
 	#endregion
 }

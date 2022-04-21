@@ -16,6 +16,7 @@ public abstract class CowState
 	#region Properties
 	public abstract CowStateType State { get; }
 	public abstract bool CanBeTipped { get; }
+	public abstract bool CanBeAlerted { get; }
 	#endregion
 
 	#region Fields

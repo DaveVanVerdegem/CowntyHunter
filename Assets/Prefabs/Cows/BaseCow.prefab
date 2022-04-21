@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e456fac8eb297b46abf26a43231e397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 3
   Unique: 0
   Description: The cow with the spots.
   Sprite: {fileID: 0}

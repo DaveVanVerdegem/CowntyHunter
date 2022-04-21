@@ -312,7 +312,6 @@ MonoBehaviour:
   _jumpHeight: 2
   _bobSpeed: 14
   _bobAmount: 0.5
-  Animator: {fileID: 0}
 --- !u!1 &8613637342286345919
 GameObject:
   m_ObjectHideFlags: 0

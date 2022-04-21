@@ -7,6 +7,7 @@ public class AsleepCowState : CowState
 	#region Properties
 	public override CowStateType State => CowStateType.Asleep;
 	public override bool CanBeTipped => true;
+	public override bool CanBeAlerted => true;
 	#endregion
 
 	#region Constructors

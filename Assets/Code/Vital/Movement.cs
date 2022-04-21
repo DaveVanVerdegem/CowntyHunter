@@ -65,6 +65,8 @@ public class Movement : MonoBehaviour
 	}
 
 	private Animator _animator;
+
+	public Vector3 Velocity => _velocity;
 	
 
 	private void Start()

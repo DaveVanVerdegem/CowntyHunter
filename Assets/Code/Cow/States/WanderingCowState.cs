@@ -7,11 +7,12 @@ public class WanderingCowState : CowState
 	#region Properties
 	public override CowStateType State => CowStateType.Wandering;
 	public override bool CanBeTipped => false;
+	public override bool CanBeAlerted => true;
 	#endregion
 
 	#region Fields
 	private Vector3 _targetPosition = Vector3.zero;
-	private float _wanderingRange = 3f;
+	private float _wanderingRange = 5f;
 	private float _threshold = .5f;
 
 	private float _wanderTimer = 5f;
@@ -58,7 +59,6 @@ public class WanderingCowState : CowState
 	{
 		Vector3 randomVector = Random.onUnitSphere * _wanderingRange;
 		randomVector.y = 0;
-		Debug.Log(randomVector);
 
 		_targetPosition = _cow.transform.position + randomVector;
 
