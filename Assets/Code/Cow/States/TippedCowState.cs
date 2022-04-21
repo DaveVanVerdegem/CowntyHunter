@@ -24,7 +24,7 @@ public class TippedCowState : CowState
 
 		Settings.SpawnNoise(_cow.transform.position);
 
-		Object.Instantiate(Settings.PoopPrefab, _cow.transform.position + (_cow.transform.forward * 1.5f), Quaternion.identity);
+		Object.Instantiate(Settings.PoopPrefab, _cow.transform.position - (_cow.transform.forward * 1.5f), Quaternion.identity);
 		AudioPlayer.Play(Settings.FartClip, _cow.transform.position);
 	}
 	#endregion
