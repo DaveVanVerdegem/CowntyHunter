@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Foundation.Patterns.Facade;
 
 public class WanderingCowState : CowState
 {
@@ -63,7 +64,7 @@ public class WanderingCowState : CowState
 
 	private void ClampTargetPosition()
 	{
-		Vector2 pastureSize = GameSettings.instance.PastureSize;
+		Vector2 pastureSize = Settings.PastureSize;
 		_targetPosition.x = Mathf.Clamp(_targetPosition.x, -pastureSize.x + _threshold, pastureSize.x - _threshold);
 		_targetPosition.z = Mathf.Clamp(_targetPosition.z, -pastureSize.y + _threshold, pastureSize.y - _threshold);
 	}

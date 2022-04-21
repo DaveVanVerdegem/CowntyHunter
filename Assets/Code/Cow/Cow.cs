@@ -43,7 +43,7 @@ public class Cow : Agent, IHearable
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.cyan;
-		Vector2 pastureSize = GameSettings.instance.PastureSize;
+		Vector2 pastureSize = Settings.PastureSize;
 		Gizmos.DrawWireCube(Vector3.zero, new Vector3(pastureSize.x * 2, 2f, pastureSize.y * 2));
 
 		if(State != null)

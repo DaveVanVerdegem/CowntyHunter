@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Cownty Hunter/Game Settings")]
-public class GameSettings : ScriptableSingleton<GameSettings>
+public class GameSettings : ScriptableObject
 {
 	#region Inspector Fields
 	public int CowsInGame = 10;
@@ -22,24 +22,6 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 
 	[Space]
 	public AudioClipProperties FartClip = null;
-	#endregion
-
-	#region Properties
-
-	#endregion
-
-	#region Fields
-
-	#endregion
-
-	#region Life Cycle
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
 	#endregion
 
 	#region Methods
