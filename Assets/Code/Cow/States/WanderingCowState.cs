@@ -28,10 +28,6 @@ public class WanderingCowState : CowState
 	#endregion
 
 	#region Life Cycle
-	public override void Enter()
-	{
-	}
-
 	public override void Run()
 	{
 		if(_wanderTimer > 0)

@@ -18,10 +18,6 @@ public class AsleepCowState : CowState
 	#endregion
 
 	#region Life Cycle
-	public override void Enter()
-	{
-	}
-
 	public override void Run()
 	{
 	}

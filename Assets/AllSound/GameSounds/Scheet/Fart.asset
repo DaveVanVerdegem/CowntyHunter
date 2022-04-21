@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95688dcd9a436934f898718c3d965ac0, type: 3}
+  m_Name: Fart
+  m_EditorClassIdentifier: 
+  _audioClips:
+  - {fileID: 8300000, guid: 64de0082dbc75174e88898c07e5a2c76, type: 3}
+  - {fileID: 8300000, guid: 3af6ef32adb8a0449bd84ec42ae37669, type: 3}
+  - {fileID: 8300000, guid: 2aa410ffb1747c843908743354358489, type: 3}
+  - {fileID: 8300000, guid: 4a2cf72b5639fc84ab83e7d63f0ecc93, type: 3}

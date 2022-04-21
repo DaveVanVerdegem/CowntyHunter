@@ -11,6 +11,7 @@ public class Cow : Agent, IHearable
 	[Multiline]
 	public string Description = "The cow with the spots.";
 	public Sprite Sprite = null;
+	public Transform TippingPoint = null;
 	#endregion
 
 	#region Properties
@@ -62,7 +63,6 @@ public class Cow : Agent, IHearable
 			State.Exit();
 
 		State = cowState;
-		State.Enter();
 	}
 
 	public bool TryToTip(Player player)

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName ="Cownty Hunter/Game Settings")]
 public class GameSettings : ScriptableSingleton<GameSettings>
@@ -17,6 +16,12 @@ public class GameSettings : ScriptableSingleton<GameSettings>
 
 	public int StartingPoops = 10;
 	public Poop PoopPrefab = null;
+
+	[Header("Audio")]
+	public AudioPlayer AudioPlayerPrefab = null;
+
+	[Space]
+	public AudioClipProperties FartClip = null;
 	#endregion
 
 	#region Properties

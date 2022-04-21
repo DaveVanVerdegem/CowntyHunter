@@ -35,6 +35,7 @@ public class Poop : MonoBehaviour
 			if (Time.time <= _lastTriggered + _cooldown) return;
 
 			Settings.SpawnNoise(transform.position, 10);
+			AudioPlayer.Play(Settings.FartClip, transform.position);
 			_lastTriggered = Time.time;
 			_onNoiseTriggered?.Invoke();
 		}

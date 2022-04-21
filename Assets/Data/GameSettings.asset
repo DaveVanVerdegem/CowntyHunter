@@ -26,3 +26,5 @@ MonoBehaviour:
   NoisePrefab: {fileID: 41331219513903902, guid: 41e5c47673821ea41bf90907342c0a4b, type: 3}
   StartingPoops: 10
   PoopPrefab: {fileID: 8451972060535360572, guid: c607cecd25fc4c34ca76ef39471bb83c, type: 3}
+  AudioPlayerPrefab: {fileID: 8870859756880011442, guid: 96b9a44f846f548409a0a48acf7b1429, type: 3}
+  FartClip: {fileID: 11400000, guid: 0d9fa2198dbd61b4f90023c3968c3c7c, type: 2}
