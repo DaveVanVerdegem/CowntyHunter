@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 	{
         _cowDetector = GetComponentInChildren<CowDetector>();
 
-		Instantiate(_playerVisuals[_id], transform);
+		Instantiate(_playerVisuals[Players.Count], transform);
 
 		Players.Add(this);
 		_id = Players.Count;
