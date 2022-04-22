@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3af6ef32adb8a0449bd84ec42ae37669, type: 3}
   - {fileID: 8300000, guid: 2aa410ffb1747c843908743354358489, type: 3}
   - {fileID: 8300000, guid: 4a2cf72b5639fc84ab83e7d63f0ecc93, type: 3}
+  MixingGroup: 3

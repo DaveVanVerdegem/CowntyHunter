@@ -11,6 +11,7 @@ public enum MixingGroup
 	Music = 0,
 	DefaultSounds = 1,
 	Footsteps = 2,
+	Farts = 3,
 }
 #endregion
 
@@ -23,6 +24,7 @@ public class AudioPlayer : MonoBehaviour
 	[SerializeField] private AudioMixerGroup _musicMixer = null;
 	[SerializeField] private AudioMixerGroup _defaultSoundsMixer = null;
 	[SerializeField] private AudioMixerGroup _footstepsMixer = null;
+	[SerializeField] private AudioMixerGroup _fartsMixer = null;
 	#endregion
 
 	#region Life Cycle
@@ -70,6 +72,9 @@ public class AudioPlayer : MonoBehaviour
 				_audioSource.outputAudioMixerGroup = _footstepsMixer;
 				return;
 
+			case MixingGroup.Farts:
+				_audioSource.outputAudioMixerGroup = _fartsMixer;
+				return;
 		}
 	}
 	#endregion

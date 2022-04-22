@@ -52,6 +52,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-2631352287972980673
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Farts
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b373e168e0f7aa24098f71cf413c0e15
+  m_Children: []
+  m_Volume: 97991cd07f4ee24439d9005c45df5c93
+  m_Pitch: 12f61ac5f3209754fa5bbeb1aa099679
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 6920056366902657352}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-753872949597341041
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -88,6 +107,7 @@ AudioMixerController:
     - 7661c0af69c4ea844b3e6a4f6b6cb826
     - 58d511054fcd216469568816a1b7ed73
     - 494c2aacc8ba9214b817d0061fbb2038
+    - b373e168e0f7aa24098f71cf413c0e15
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -104,6 +124,7 @@ AudioMixerGroupController:
   - {fileID: 1988680821509927423}
   - {fileID: -5567588279296440982}
   - {fileID: -2691576507032289854}
+  - {fileID: -2631352287972980673}
   m_Volume: 92c156a97cd5e4e44a4a05727fb97146
   m_Pitch: d1f6cfd8888224f49a46b3a55f7f0603
   m_Send: 00000000000000000000000000000000
@@ -170,6 +191,20 @@ AudioMixerEffectController:
   m_EffectID: 5e264f4b12a874e47a22a086a894cd7b
   m_EffectName: Attenuation
   m_MixLevel: 2d348c39c4ef91d4b9c70d94b5db8523
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &6920056366902657352
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8bc0d53b6538b3c49bdef5c871d36f05
+  m_EffectName: Attenuation
+  m_MixLevel: 70084976e921a1a43831400b13ab48b7
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
