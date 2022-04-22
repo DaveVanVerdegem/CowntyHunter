@@ -28,6 +28,7 @@ public class GameSettings : ScriptableObject
 
 	public AudioClipProperties AlertedCowClip = null;
 	public AudioClipProperties FristiAlertedCowClip = null;
+	public AudioClipProperties FootstepClip = null;
 	#endregion
 
 	#region Methods

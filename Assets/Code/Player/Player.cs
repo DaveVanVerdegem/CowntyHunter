@@ -10,6 +10,7 @@ public class Player : Agent
 	#region Inspector Fields
 	[SerializeField] private List<GameObject> _playerVisuals = new List<GameObject>();
 	[SerializeField] private List<Color> _flashLightColors = new List<Color>();
+	[SerializeField] private float _footStepInterval = .5f;
 	#endregion
 
 	#region Properties
@@ -26,6 +27,9 @@ public class Player : Agent
 	private CowDetector _cowDetector = null;
 	private int _id = 0;
 	private Light _flashLight = null;
+
+	private Vector3 _lastFootStepPosition = Vector3.zero;
+	private Movement _movement = null;
     #endregion
 
 	#region Life Cycle
@@ -33,12 +37,15 @@ public class Player : Agent
 	{
         _cowDetector = GetComponentInChildren<CowDetector>();
 		_flashLight = GetComponentInChildren<Light>();
+		_movement = GetComponentInChildren<Movement>();
 
 		Instantiate(_playerVisuals[Players.Count], transform);
 		_flashLight.color = _flashLightColors[Players.Count];
 
 		Players.Add(this);
 		_id = Players.Count;
+
+		_lastFootStepPosition = transform.position;
 
 		GlobalEvents.CowTipped.AddListener(AddScore);
     }
@@ -58,7 +65,19 @@ public class Player : Agent
         GlobalEvents.PlayerJoined?.Invoke(this);
 	}
 
-    private void OnDestroy()
+	private void Update()
+	{
+		if(_movement.Velocity.magnitude > 0)
+		{
+			if(Vector3.Distance(_lastFootStepPosition, transform.position) > _footStepInterval)
+			{
+				AudioPlayer.Play(Settings.FootstepClip, transform.position);
+				_lastFootStepPosition = transform.position;
+			}
+		}
+	}
+
+	private void OnDestroy()
 	{
 		Players.Remove(this);
 	}

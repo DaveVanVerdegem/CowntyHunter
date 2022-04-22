@@ -243,6 +243,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cb96ccfa-a6dc-41cd-ad45-9f82c2e64591
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 312dd89c-5069-4576-a7e5-9fedd3ba0c56
+    m_ActionName: Player/Any Key[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -289,6 +293,7 @@ MonoBehaviour:
   - {r: 0.27058825, g: 0.5568628, b: 1, a: 1}
   - {r: 0.27058825, g: 1, b: 0.50980395, a: 1}
   - {r: 1, g: 0.92941177, b: 0.27058825, a: 1}
+  _footStepInterval: 0.8
   ScoreUpdated:
     m_PersistentCalls:
       m_Calls: []
