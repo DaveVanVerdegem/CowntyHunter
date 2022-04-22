@@ -43,6 +43,12 @@ public class Billboard : MonoBehaviour
 		StartCoroutine(BlinkCoroutine(duration));
 	}
 
+	public void SetMaterial(Material material)
+	{
+		Renderer renderer = GetComponentInChildren<Renderer>();
+		renderer.material = material;
+	}
+
 	private IEnumerator BlinkCoroutine(float duration)
 	{
 		yield return new WaitForSeconds(duration);

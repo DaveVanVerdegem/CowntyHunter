@@ -11,6 +11,10 @@ public class Player : Agent
 	[SerializeField] private List<GameObject> _playerVisuals = new List<GameObject>();
 	[SerializeField] private List<Color> _flashLightColors = new List<Color>();
 	[SerializeField] private float _footStepInterval = .5f;
+
+	[Space]
+	[SerializeField] private Billboard _playerBillboard = null;
+	[SerializeField] private List<Material> _billboardIndicators = new List<Material>();
 	#endregion
 
 	#region Properties
@@ -41,6 +45,7 @@ public class Player : Agent
 
 		Instantiate(_playerVisuals[Players.Count], transform);
 		_flashLight.color = _flashLightColors[Players.Count];
+		_playerBillboard.SetMaterial(_billboardIndicators[Players.Count]);
 
 		Players.Add(this);
 		_id = Players.Count;
@@ -61,6 +66,8 @@ public class Player : Agent
                 break;
             }
         }
+
+		_playerBillboard.Blink(5f);
 
         GlobalEvents.PlayerJoined?.Invoke(this);
 	}
