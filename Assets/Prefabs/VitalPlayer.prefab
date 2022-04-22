@@ -251,11 +251,11 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 65729929-af61-43c5-bdb5-81d9cafcc7e2
-    m_ActionName: UI/Next[/Keyboard/d,/XInputControllerWindows/rightStick/right,/DualShock4GamepadHID/rightStick/right,/XInputControllerWindows1/rightStick/right,/SwitchProControllerHID/rightStick/right,/Keyboard/rightArrow]
+    m_ActionName: UI/Next[/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cfaa964e-dc89-44fb-b756-27eaad60f456
-    m_ActionName: UI/Previous[/XInputControllerWindows/rightStick/left,/DualShock4GamepadHID/rightStick/left,/XInputControllerWindows1/rightStick/left,/SwitchProControllerHID/rightStick/left,/Keyboard/a,/Keyboard/leftArrow]
+    m_ActionName: UI/Previous[/Keyboard/a,/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8217562243327624374}
@@ -271,7 +271,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 7336757f-1416-4c2c-b669-10a8df532a30
-    m_ActionName: Player/New action
+    m_ActionName: Player/Quit[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _playerVisuals:
-  - {fileID: 6734133632248383081, guid: 9ecb8f782347aa240af4ca05532330d7, type: 3}
+  - {fileID: 1621079125783572915, guid: 36d0f9b37857da940ad2dd68c8ccd6f4, type: 3}
   - {fileID: 8118585345989187193, guid: 0d6e7cc8f90eab244a791e11c44ed808, type: 3}
   - {fileID: 2052542832036999120, guid: 394f55b5b8a10e44d999f3d80ba829c3, type: 3}
   - {fileID: 3784348472630730586, guid: 8d30d601d271bc343a120ad03de52ac3, type: 3}

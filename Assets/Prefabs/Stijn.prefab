@@ -5927,7 +5927,7 @@ MonoBehaviour:
       m_Topology: 0
     m_Mesh: {fileID: 0}
   m_SkinMeshRef: {fileID: 0}
-  m_OriginalMeshObject: {fileID: 1083539166117597334, guid: 3825c7a6d06ab1d449d73f5f97142a7a, type: 3}
+  m_OriginalMeshObject: {fileID: 0}
   m_Mode: 0
 --- !u!1 &1531611422558296632
 GameObject:
