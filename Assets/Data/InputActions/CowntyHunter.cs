@@ -62,6 +62,15 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""7336757f-1416-4c2c-b669-10a8df532a30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -304,6 +313,17 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
                     ""action"": ""Any Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7fd0d7b-60d8-48a5-9164-1973eb31c66c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1001,6 +1021,7 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Push = m_Player.FindAction("Push", throwIfNotFound: true);
         m_Player_AnyKey = m_Player.FindAction("Any Key", throwIfNotFound: true);
+        m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1078,6 +1099,7 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Push;
     private readonly InputAction m_Player_AnyKey;
+    private readonly InputAction m_Player_Quit;
     public struct PlayerActions
     {
         private @CowntyHunter m_Wrapper;
@@ -1086,6 +1108,7 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Push => m_Wrapper.m_Player_Push;
         public InputAction @AnyKey => m_Wrapper.m_Player_AnyKey;
+        public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1107,6 +1130,9 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
                 @AnyKey.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
                 @AnyKey.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
                 @AnyKey.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
+                @Quit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1123,6 +1149,9 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
                 @AnyKey.started += instance.OnAnyKey;
                 @AnyKey.performed += instance.OnAnyKey;
                 @AnyKey.canceled += instance.OnAnyKey;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -1299,6 +1328,7 @@ public partial class @CowntyHunter : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnPush(InputAction.CallbackContext context);
         void OnAnyKey(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

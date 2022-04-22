@@ -101,6 +101,13 @@ public class Player : Agent
 		if (_cowDetector.CowFound)
 			_cowDetector.Cow.TryToTip(this);
 	}
+
+	public void QuitGame(InputAction.CallbackContext callback)
+	{
+		if(!callback.performed) return;
+
+		Application.Quit();
+	}
 	#endregion
 
 	#region Methods
