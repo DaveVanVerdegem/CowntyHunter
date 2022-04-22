@@ -7,22 +7,31 @@ public class CharacterSelection : MonoBehaviour
 	public GameObject[] characters;
 	public int selectedCharacter = 0;
 
-	public void NextCharacter()
+	public void NextCharacter(InputAction.CallbackContext ctx)
 	{
-		characters[selectedCharacter].SetActive(false);
-		selectedCharacter = (selectedCharacter + 1) % characters.Length;
-		characters[selectedCharacter].SetActive(true);
+        if (ctx.phase == InputActionPhase.Started)
+        {
+			characters[selectedCharacter].SetActive(false);
+            selectedCharacter = (selectedCharacter + 1) % characters.Length;
+            characters[selectedCharacter].SetActive(true);
+		}
+
 	}
 
-	public void PreviousCharacter()
+	public void PreviousCharacter(InputAction.CallbackContext ctx)
 	{
-		characters[selectedCharacter].SetActive(false);
-		selectedCharacter--;
-		if (selectedCharacter < 0)
-		{
-			selectedCharacter += characters.Length;
+
+        if (ctx.phase == InputActionPhase.Started)
+        {
+			characters[selectedCharacter].SetActive(false);
+            selectedCharacter--;
+            if (selectedCharacter < 0)
+            {
+                selectedCharacter += characters.Length;
+            }
+            characters[selectedCharacter].SetActive(true);
 		}
-		characters[selectedCharacter].SetActive(true);
+
 	}
 
 	public void StartGame()
