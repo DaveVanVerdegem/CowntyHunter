@@ -403,7 +403,7 @@
                 },
                 {
                     "name": "Next",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "65729929-af61-43c5-bdb5-81d9cafcc7e2",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -412,7 +412,7 @@
                 },
                 {
                     "name": "Previous",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "cfaa964e-dc89-44fb-b756-27eaad60f456",
                     "expectedControlType": "Button",
                     "processors": "",
