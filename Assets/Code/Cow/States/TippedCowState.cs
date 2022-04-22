@@ -23,7 +23,10 @@ public class TippedCowState : CowState
 		_cow.TippingPoint.transform.Rotate(Vector3.right, 180);
 
 		Settings.SpawnNoise(_cow.transform.position);
-		AudioPlayer.Play(Settings.FallingCowClip, _cow.transform.position);
+		if(_cow.IsFristiCow)
+			AudioPlayer.Play(Settings.FristiFallingCowClip, _cow.transform.position);
+		else
+			AudioPlayer.Play(Settings.FallingCowClip, _cow.transform.position);
 
 		_cow.StartCoroutine(FartCoroutine());
 	}

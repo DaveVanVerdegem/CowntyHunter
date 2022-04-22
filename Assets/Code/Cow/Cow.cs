@@ -8,6 +8,7 @@ public class Cow : Agent, IHearable
 {
 	#region Inspector Fields
 	public bool Unique = false;
+	public bool IsFristiCow = false;
 	[Multiline]
 	public string Description = "The cow with the spots.";
 	public Sprite Sprite = null;

@@ -25,6 +25,11 @@ public class AlertedCowState : CowState
 		//Debug.Log($"{_cow.name} is wandering.");
 		_cow.AlertedBillboard.Blink();
 
+		if (_cow.IsFristiCow)
+			AudioPlayer.Play(Settings.FristiAlertedCowClip, _cow.transform.position);
+		else
+			AudioPlayer.Play(Settings.AlertedCowClip, _cow.transform.position);
+
 		GenerateNewTargetPosition();
 	}
 	#endregion
