@@ -38,8 +38,8 @@ public class PlayerUI : MonoBehaviour
 
 		_player = player;
 		UpdateScore(_player);
-		_bonusCowDescriptionText.text = _player.BonusCow.Description;
-		_bonusCowDescriptionText.enabled = true;
+		//_bonusCowDescriptionText.text = _player.BonusCow.Description;
+		//_bonusCowDescriptionText.enabled = true;
 
 		_bonusCowImage.sprite = _player.BonusCow.Sprite;
 		_bonusCowImage.enabled = true;
