@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _playerVisuals:
-  - {fileID: 7492548680103181247, guid: fbbff6293b457094e984138199ac9258, type: 3}
+  - {fileID: 6734133632248383081, guid: 9ecb8f782347aa240af4ca05532330d7, type: 3}
   - {fileID: 8118585345989187193, guid: 0d6e7cc8f90eab244a791e11c44ed808, type: 3}
   - {fileID: 2052542832036999120, guid: 394f55b5b8a10e44d999f3d80ba829c3, type: 3}
   - {fileID: 3784348472630730586, guid: 8d30d601d271bc343a120ad03de52ac3, type: 3}
