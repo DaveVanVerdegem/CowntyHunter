@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95688dcd9a436934f898718c3d965ac0, type: 3}
+  m_Name: FallingCow
+  m_EditorClassIdentifier: 
+  _audioClips:
+  - {fileID: 8300000, guid: 408722f409dba0c479942cf1164a36ce, type: 3}
+  - {fileID: 8300000, guid: 1f50a821cb0ad634fb20333eb4a789e8, type: 3}
+  - {fileID: 8300000, guid: fd345b4f2af7e364690e5fefd0159adf, type: 3}
+  - {fileID: 8300000, guid: 983b77d2852f912418460807e00c7f0f, type: 3}

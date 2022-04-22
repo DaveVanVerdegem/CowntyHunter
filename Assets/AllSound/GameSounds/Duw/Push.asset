@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95688dcd9a436934f898718c3d965ac0, type: 3}
+  m_Name: Push
+  m_EditorClassIdentifier: 
+  _audioClips:
+  - {fileID: 8300000, guid: c316969be8bc6d2498530648aa85b0c0, type: 3}
+  - {fileID: 8300000, guid: 992dbe3c707a74145851ffc074ac63d1, type: 3}
+  - {fileID: 8300000, guid: 39653f7bee1726941b53bd2ec798df36, type: 3}
+  - {fileID: 8300000, guid: c9170540498302f4394f6d7b8dce5cbb, type: 3}
+  - {fileID: 8300000, guid: fe2f172ffb8094d4fb9eb68aa71c99cd, type: 3}
+  - {fileID: 8300000, guid: c40e0cc44c9c7e146b1be4ea52802020, type: 3}
+  - {fileID: 8300000, guid: ad1cd6948674baf41aa71828e37c26b3, type: 3}

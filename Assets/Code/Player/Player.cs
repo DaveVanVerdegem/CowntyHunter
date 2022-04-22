@@ -70,6 +70,8 @@ public class Player : Agent
 	{
 		if (!callback.performed) return;
 
+		AudioPlayer.Play(Settings.PushClip, transform.position);
+
 		if (_cowDetector.CowFound)
 			_cowDetector.Cow.TryToTip(this);
 	}

@@ -23,9 +23,9 @@ public class TippedCowState : CowState
 		_cow.TippingPoint.transform.Rotate(Vector3.right, 180);
 
 		Settings.SpawnNoise(_cow.transform.position);
+		AudioPlayer.Play(Settings.FallingCowClip, _cow.transform.position);
 
-		Object.Instantiate(Settings.PoopPrefab, _cow.transform.position - (_cow.transform.forward * 1.7f), Quaternion.identity);
-		AudioPlayer.Play(Settings.FartClip, _cow.transform.position);
+		_cow.StartCoroutine(FartCoroutine());
 	}
 	#endregion
 
@@ -44,7 +44,6 @@ public class TippedCowState : CowState
 		}
 
 		_timer += Time.deltaTime;
-			
 	}
 
 	public override void Exit()
@@ -55,6 +54,14 @@ public class TippedCowState : CowState
 	#region Methods
 	public override void ShowDebugInfo()
 	{
+	}
+
+	private IEnumerator FartCoroutine()
+	{
+		yield return new WaitForSeconds(1);
+
+		Object.Instantiate(Settings.PoopPrefab, _cow.transform.position - (_cow.transform.forward * 1.7f), Quaternion.identity);
+		AudioPlayer.Play(Settings.FartClip, _cow.transform.position);
 	}
 	#endregion
 }

@@ -22,6 +22,8 @@ public class GameSettings : ScriptableObject
 
 	[Space]
 	public AudioClipProperties FartClip = null;
+	public AudioClipProperties FallingCowClip = null;
+	public AudioClipProperties PushClip = null;
 	#endregion
 
 	#region Methods
