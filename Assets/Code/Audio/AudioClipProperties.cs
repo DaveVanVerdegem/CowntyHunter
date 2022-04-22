@@ -7,6 +7,7 @@ public class AudioClipProperties : ScriptableObject
 {
 	#region Inspector Fields
 	[SerializeField] private List<AudioClip> _audioClips = new List<AudioClip>();
+	public MixingGroup MixingGroup = MixingGroup.DefaultSounds;
 	#endregion
 
 	#region Methods

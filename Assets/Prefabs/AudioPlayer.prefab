@@ -141,3 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 2895091793965652506}
+  _musicMixer: {fileID: 1988680821509927423, guid: 9e4e1e0b511057d4a8e3f15f5b0b7ba7, type: 2}
+  _defaultSoundsMixer: {fileID: -5567588279296440982, guid: 9e4e1e0b511057d4a8e3f15f5b0b7ba7, type: 2}
+  _footstepsMixer: {fileID: -2691576507032289854, guid: 9e4e1e0b511057d4a8e3f15f5b0b7ba7, type: 2}
