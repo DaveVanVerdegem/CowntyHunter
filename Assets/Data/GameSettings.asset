@@ -28,3 +28,8 @@ MonoBehaviour:
   PoopPrefab: {fileID: 8451972060535360572, guid: c607cecd25fc4c34ca76ef39471bb83c, type: 3}
   AudioPlayerPrefab: {fileID: 8870859756880011442, guid: 96b9a44f846f548409a0a48acf7b1429, type: 3}
   FartClip: {fileID: 11400000, guid: 0d9fa2198dbd61b4f90023c3968c3c7c, type: 2}
+  FallingCowClip: {fileID: 11400000, guid: b81469dc056c93a41a68c1e2b958e74f, type: 2}
+  FristiFallingCowClip: {fileID: 11400000, guid: d02986f195b7e624286048b8b57d624f, type: 2}
+  PushClip: {fileID: 11400000, guid: 1ce6d4bc91cb3364d8b512aed6f5870e, type: 2}
+  AlertedCowClip: {fileID: 11400000, guid: b62d7d6e9fb23114986b30de6153ec36, type: 2}
+  FristiAlertedCowClip: {fileID: 11400000, guid: 694e22f9901955b4496ac0bfe1df48b9, type: 2}

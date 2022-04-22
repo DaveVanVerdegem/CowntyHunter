@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: Description
       value: A cow that tastes like Fristi.
       objectReference: {fileID: 0}
+    - target: {fileID: 5228992502676326305, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
+      propertyPath: IsFristiCow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8963222724209677848, guid: 7c4bc040f6d5a2845b5dedec2704b1a4, type: 3}
       propertyPath: m_RootOrder
       value: 0
